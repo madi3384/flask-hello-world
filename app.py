@@ -52,7 +52,7 @@ def choosing():
         SELECT * FROM Basketball;
         ''')
     records = cur.fetchall()
-    con.close()
+    conn.close()
     response =' '
     reponse+="<table>"
     for player in records:
