@@ -53,12 +53,12 @@ def choosing():
         ''')
     records = cur.fetchall()
     conn.close()
-    response =' '
-    reponse+="<table>"
+    response_string =' '
+    reponse_string+="<table>"
     for player in records:
-        response+="<tr>"
+        response_string+="<tr>"
         for info in player:
-            response+="<td>{}</td>".format(info)
-        response+="</tr>"
-    response+="</table>"
-    return response
+            response_string+="<td>{}</td>".format(info)
+        response_string+="</tr>"
+    response_string+="</table>"
+    return response_string
