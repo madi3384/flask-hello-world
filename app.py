@@ -46,7 +46,7 @@ def adding():
     return "Basketball Table Successfully Populated"
 
 @app.route('/db_select')
-def choosing():
+def selecting():
     conn = psycopg2.connect ("postgresql://basketball_nmkt_user:vuU6ZLrvQdrqzxcVtVTJEVG4LT6xhWgl@dpg-cvlihe7gi27c73e3qco0-a/basketball_nmkt")
     cur = conn.cursor()
     cur.execute('''
@@ -54,7 +54,7 @@ def choosing():
         ''')
     records = cur.fetchall()
     conn.close()
-    response_string =""
+    response_string=""
     reponse_string+="<table>"
     for player in records:
         response_string+="<tr>"
