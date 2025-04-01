@@ -17,7 +17,7 @@ def creation():
     conn = psycopg2.connect ("postgresql://basketball_nmkt_user:vuU6ZLrvQdrqzxcVtVTJEVG4LT6xhWgl@dpg-cvlihe7gi27c73e3qco0-a/basketball_nmkt")
     cur = conn.cursor()
     cur.execute('''
-        CREATE TABLE IF NOT EXISTS Basketball (
+        CREATE TABLE IF NOT EXISTS basketball (
         First varchar(255),
         Last varchar(255),
         City varchar(255),
@@ -34,7 +34,7 @@ def adding():
     conn = psycopg2.connect ("postgresql://basketball_nmkt_user:vuU6ZLrvQdrqzxcVtVTJEVG4LT6xhWgl@dpg-cvlihe7gi27c73e3qco0-a/basketball_nmkt")
     cur = conn.cursor()
     cur.execute('''
-        INSERT INTO Basketball (First, Last, City, Name, Number)
+        INSERT INTO basketball (First, Last, City, Name, Number)
         Values
         ('Jayson', 'Tatum', 'Boston', 'Celtics', 0),
         ('Stephen', 'Curry', 'San Francisco', 'Warriors', 30),
@@ -50,7 +50,7 @@ def selecting():
     conn = psycopg2.connect ("postgresql://basketball_nmkt_user:vuU6ZLrvQdrqzxcVtVTJEVG4LT6xhWgl@dpg-cvlihe7gi27c73e3qco0-a/basketball_nmkt")
     cur = conn.cursor()
     cur.execute('''
-        SELECT * FROM Basketball;
+        SELECT * FROM basketball;
         ''')
     records = cur.fetchall()
     conn.close()
@@ -69,7 +69,7 @@ def dropping():
     conn = psycopg2.connect ("postgresql://basketball_nmkt_user:vuU6ZLrvQdrqzxcVtVTJEVG4LT6xhWgl@dpg-cvlihe7gi27c73e3qco0-a/basketball_nmkt")
     cur = conn.cursor()
     cur.execute('''
-        DROP TABLE Basketball;
+        DROP TABLE basketball;
         ''')
     conn.commit()
     conn.close()
